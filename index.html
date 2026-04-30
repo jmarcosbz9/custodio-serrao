@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Renovação de Aluguel — Custódio Serrão 14 / 502</title>
+  <meta name="description" content="Estudo comparativo de mercado e recomendação para renovação contratual — Lagoa, Rio de Janeiro. Maio 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:      #1a1814;
+      --ink2:     #3d3830;
+      --muted:    #7c7469;
+      --rule:     #d6cfc5;
+      --rule2:    #ede8e1;
+      --paper:    #faf8f4;
+      --paper2:   #f3efe8;
+      --cream:    #fffdf9;
+      --gold:     #b8892a;
+      --gold2:    #f5e9cb;
+      --teal:     #1a6359;
+      --teal2:    #e4f0ee;
+      --red:      #8b2a2a;
+      --red2:     #fdf0f0;
+      --green:    #2a5e35;
+      --green2:   #edf5ef;
+      --shadow:   0 2px 16px rgba(26,24,20,.08);
+      --shadow2:  0 8px 40px rgba(26,24,20,.12);
+      --r:        12px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    /* ── HEADER ─────────────────────────────── */
+    header {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(184,137,42,.05) 40px,
+        rgba(184,137,42,.05) 41px
+      );
+    }
+    .header-inner {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 28px 40px;
+    }
+    .header-eyebrow {
+      font-size: .8rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.9rem, 5vw, 2.9rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    header h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      font-size: .88rem;
+      color: rgba(255,255,255,.6);
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 14px;
+      margin-top: 14px;
+    }
+    .header-meta span::before { content: '· '; color: var(--gold); }
+    .header-meta span:first-child::before { content: ''; }
+
+    /* ── NAV ──────────────────────────────── */
+    nav.toc {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250,248,244,.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 28px;
+    }
+    nav.toc ul {
+      max-width: 900px;
+      margin: 0 auto;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    nav.toc a {
+      display: block;
+      padding: 13px 14px;
+      font-size: .82rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+      white-space: nowrap;
+    }
+    nav.toc a:hover { color: var(--teal); border-bottom-color: var(--teal); }
+
+    /* ── LAYOUT ─────────────────────────────── */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 28px 72px;
+    }
+    section { margin-bottom: 56px; }
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    h2 .num {
+      font-family: 'Source Serif 4', serif;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      margin: 28px 0 10px;
+      color: var(--ink2);
+    }
+    p { margin-bottom: 14px; color: var(--ink2); }
+    ul, ol { padding-left: 1.4em; color: var(--ink2); }
+    li { margin-bottom: 6px; }
+    a { color: var(--teal); }
+    a:hover { text-decoration: underline; }
+
+    /* ── SUMMARY CARDS ─────────────────────── */
+    .cards3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .scard {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: var(--r);
+      padding: 20px 18px 18px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .scard::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .scard.min::before  { background: var(--muted); }
+    .scard.ideal::before { background: var(--teal); }
+    .scard.max::before  { background: var(--gold); }
+    .scard-label {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .scard-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .scard.min  .scard-val { color: var(--ink2); }
+    .scard.ideal .scard-val { color: var(--teal); }
+    .scard.max  .scard-val { color: var(--gold); }
+    .scard-sub { font-size: .84rem; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+    /* ── CALLOUTS ────────────────────────────── */
+    .callout {
+      border-radius: var(--r);
+      padding: 16px 18px;
+      margin: 20px 0;
+      font-size: .95rem;
+    }
+    .callout.green { background: var(--green2); border-left: 4px solid var(--green); }
+    .callout.amber { background: var(--gold2);  border-left: 4px solid var(--gold);  }
+    .callout.red   { background: var(--red2);   border-left: 4px solid var(--red);   }
+    .callout.teal  { background: var(--teal2);  border-left: 4px solid var(--teal);  }
+    .callout strong { display: block; margin-bottom: 4px; }
+
+    /* ── CHIPS ─────────────────────────────── */
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+    .chip {
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--paper2);
+      border: 1px solid var(--rule);
+      font-size: .86rem;
+      color: var(--ink2);
+    }
+    .chip.hi { background: var(--teal2); border-color: #a8ccc8; color: var(--teal); font-weight: 600; }
+
+    /* ── DATA BOXES ────────────────────────── */
+    .databox {
+      background: var(--ink);
+      color: #e8e0d4;
+      border-radius: var(--r);
+      padding: 18px 20px;
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: .88rem;
+      line-height: 1.7;
+      margin: 16px 0;
+      overflow-x: auto;
+    }
+    .databox .lbl { color: var(--gold); }
+    .databox .val { color: #fff; font-weight: 600; }
+
+    /* ── TIMELINE BAR ──────────────────────── */
+    .timeline-bar {
+      background: var(--paper2);
+      border: 1px solid var(--rule);
+      border-radius: var(--r);
+      padding: 20px 22px;
+      margin: 20px 0;
+    }
+    .tbar-track {
+      height: 10px;
+      background: var(--rule2);
+      border-radius: 99px;
+      margin: 12px 0 6px;
+      position: relative;
+      overflow: visible;
+    }
+    .tbar-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+      position: relative;
+    }
+    .tbar-fill::after {
+      content: attr(data-label);
+      position: absolute;
+      right: -2px;
+      top: -28px;
+      font-size: .78rem;
+      color: var(--gold);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .tbar-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    /* ── INDEX COMPARISON TABLE ──────────── */
+    .idx-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .idx-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: var(--r);
+      padding: 16px;
+    }
+    .idx-card .idx-name { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .idx-card .idx-pct { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; }
+    .idx-card .idx-result { font-size: .9rem; margin-top: 6px; }
+    .idx-card .idx-result strong { color: var(--ink); }
+    .positive { color: var(--teal); }
+    .negative { color: var(--red); }
+    .neutral  { color: var(--muted); }
+
+    /* ── CALCULATOR ────────────────────────── */
+    .calc-wrap {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: var(--r);
+      padding: 24px;
+      margin: 20px 0;
+      box-shadow: var(--shadow);
+    }
+    .calc-wrap h3 { margin-top: 0; }
+    .slider-row { margin-bottom: 18px; }
+    .slider-row label {
+      display: flex;
+      justify-content: space-between;
+      font-size: .9rem;
+      color: var(--ink2);
+      margin-bottom: 6px;
+    }
+    .slider-row label span { font-weight: 600; color: var(--teal); font-size: 1rem; }
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 99px;
+      background: var(--rule2);
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--teal);
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(26,99,89,.3);
+    }
+    .calc-result {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+    }
+    .calc-result .cr-item { text-align: center; }
+    .calc-result .cr-lbl { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 4px; }
+    .calc-result .cr-val { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--ink); }
+    .calc-result .cr-val.total { color: var(--teal); font-size: 1.6rem; }
+
+    /* ── COMPARABLES TABLE ─────────────────── */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: var(--r);
+      border: 1px solid var(--rule);
+      margin: 20px 0;
+      background: var(--cream);
+    }
+    table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    thead th {
+      background: var(--ink);
+      color: rgba(255,255,255,.8);
+      padding: 10px 12px;
+      text-align: left;
+      white-space: nowrap;
+      font-weight: 600;
+      font-size: .8rem;
+      letter-spacing: .04em;
+    }
+    tbody tr:nth-child(even) { background: var(--paper2); }
+    tbody tr:hover { background: var(--teal2); }
+    tbody td { padding: 9px 12px; border-bottom: 1px solid var(--rule2); vertical-align: middle; }
+    tbody td a { color: var(--teal); font-size: .82rem; }
+    .subj-row td { background: var(--gold2) !important; font-weight: 600; }
+    .subj-row td:first-child::before { content: '★ '; color: var(--gold); }
+
+    /* ── NEGOTIATION SCRIPTS ──────────────── */
+    blockquote {
+      border-left: 3px solid var(--gold);
+      background: var(--paper2);
+      border-radius: 0 var(--r) var(--r) 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-style: italic;
+      color: var(--ink2);
+      line-height: 1.6;
+    }
+    blockquote cite {
+      display: block;
+      font-size: .8rem;
+      font-style: normal;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* ── BAR CHART ─────────────────────────── */
+    .chart-wrap { margin: 24px 0; }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 160px 1fr 80px;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: .88rem;
+    }
+    .bar-label { color: var(--muted); text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .bar-track { height: 28px; background: var(--rule2); border-radius: 4px; overflow: hidden; }
+    .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: white;
+      white-space: nowrap;
+      transition: width .8s cubic-bezier(.4,0,.2,1);
+    }
+    .bar-val { font-weight: 600; color: var(--ink); }
+    .bar-fill.current  { background: var(--muted); }
+    .bar-fill.min      { background: #5e8a6e; }
+    .bar-fill.ideal    { background: var(--teal); }
+    .bar-fill.max      { background: var(--gold); }
+    .bar-fill.mkt      { background: var(--ink2); }
+
+    /* ── LEGAL ─────────────────────────────── */
+    .legal-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+      align-items: start;
+    }
+    .legal-icon {
+      width: 28px; height: 28px;
+      background: var(--teal2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .85rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── FOOTER ─────────────────────────────── */
+    footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 28px 48px;
+      border-top: 1px solid var(--rule);
+      font-size: .82rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    /* ── SOURCES ────────────────────────────── */
+    .sources { list-style: none; padding: 0; }
+    .sources li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--rule2);
+      font-size: .9rem;
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+    }
+    .sources li::before { content: '↗'; color: var(--teal); flex-shrink: 0; }
+
+    /* ── RESPONSIVE ────────────────────────── */
+    @media (max-width: 700px) {
+      .cards3, .idx-grid, .calc-result { grid-template-columns: 1fr; }
+      nav.toc a { padding: 10px 8px; font-size: .75rem; }
+      .bar-row { grid-template-columns: 100px 1fr 70px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-eyebrow">Relatório de Renovação Contratual</div>
+    <h1>Rua Custódio Serrão 14,<br><em>Apartamento 502</em></h1>
+    <div class="header-meta">
+      <span>Lagoa, Rio de Janeiro</span>
+      <span>96 m² · 3 quartos · 1 suíte</span>
+      <span>2 vagas · Portaria 24h · Elevador</span>
+      <span>Estudo elaborado em 29 de abril de 2026</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Índice">
+  <ul>
+    <li><a href="#sumario">Sumário</a></li>
+    <li><a href="#contrato">Contrato Vigente</a></li>
+    <li><a href="#indices">Índices</a></li>
+    <li><a href="#calculadora">Calculadora</a></li>
+    <li><a href="#comparaveis">Comparáveis</a></li>
+    <li><a href="#recomendacao">Recomendação</a></li>
+    <li><a href="#juridico">Aspectos Jurídicos</a></li>
+    <li><a href="#fontes">Fontes</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ════════════ SUMÁRIO ════════════ -->
+  <section id="sumario">
+    <h2><span class="num">01 /</span> Sumário Executivo</h2>
+
+    <div class="cards3">
+      <div class="scard min">
+        <div class="scard-label">Piso defensável</div>
+        <div class="scard-val">R$ 5.500</div>
+        <div class="scard-sub">Para garantir continuidade e evitar vacância. Custo total do ocupante abaixo do 1º quartil da amostra.</div>
+      </div>
+      <div class="scard ideal">
+        <div class="scard-label">Faixa ideal de fechamento</div>
+        <div class="scard-val">R$ 5.800 – 5.900</div>
+        <div class="scard-sub">Alinha o imóvel ao quartil inferior do mercado comparável. Patamar robusto e tecnicamente defensável.</div>
+      </div>
+      <div class="scard max">
+        <div class="scard-label">Âncora para abertura</div>
+        <div class="scard-val">R$ 6.000</div>
+        <div class="scard-sub">Pedido inicial com espaço para concessão. Compatível com o sinal auxiliar do próprio edifício.</div>
+      </div>
+    </div>
+
+    <div class="callout green">
+      <strong>Conclusão em uma linha</strong>
+      Proponha R$ 6.000. Aceite entre R$ 5.800 e R$ 5.900. Preserve R$ 5.500 como piso absoluto caso a prioridade seja evitar vacância.
+    </div>
+
+    <p>O aluguel vigente de <strong>R$ 4.621,54</strong> corresponde a <strong>R$ 48,14/m²</strong> — abaixo do quartil inferior (R$ 67,46/m²) da amostra de comparáveis coletados em Jardim Botânico e Lagoa em 29/04/2026. A defasagem não é apenas inflacionária: o mercado de novos aluguéis no Rio cresceu <strong>11,03%</strong> em 12 meses (FipeZAP, março/2026), enquanto o IGP-M acumulou apenas <strong>0,61%</strong> no mesmo período.</p>
+
+    <!-- Visual bar chart -->
+    <div class="chart-wrap" aria-label="Comparação de valores de aluguel">
+      <div class="bar-row">
+        <div class="bar-label">Aluguel atual</div>
+        <div class="bar-track"><div class="bar-fill current" style="width:77%">R$ 4.622</div></div>
+        <div class="bar-val">R$ 4.622</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Piso (mínimo)</div>
+        <div class="bar-track"><div class="bar-fill min" style="width:91%">R$ 5.500</div></div>
+        <div class="bar-val">R$ 5.500</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Faixa ideal</div>
+        <div class="bar-track"><div class="bar-fill ideal" style="width:96%">R$ 5.800–5.900</div></div>
+        <div class="bar-val">R$ 5.800</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Âncora de abertura</div>
+        <div class="bar-track"><div class="bar-fill max" style="width:100%">R$ 6.000</div></div>
+        <div class="bar-val">R$ 6.000</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Mediana comparáveis</div>
+        <div class="bar-track"><div class="bar-fill mkt" style="width:112%;max-width:100%">mediana amostra</div></div>
+        <div class="bar-val">R$ 6.720*</div>
+      </div>
+      <p style="font-size:.78rem;color:var(--muted);margin-top:6px">* R$/m² mediano da amostra (R$ 70,00) × 96 m² — sem ajuste pelos encargos mais altos do imóvel.</p>
+    </div>
+  </section>
+
+  <!-- ════════════ CONTRATO VIGENTE ════════════ -->
+  <section id="contrato">
+    <h2><span class="num">02 /</span> Contrato Vigente &amp; Encargos</h2>
+
+    <div class="chips">
+      <span class="chip">96 m²</span>
+      <span class="chip">3 quartos</span>
+      <span class="chip hi">1 suíte</span>
+      <span class="chip hi">Dependências completas</span>
+      <span class="chip hi">2 vagas escrituradas (exclusivo no Ed. São Bernardo)</span>
+      <span class="chip">Portaria 24h</span>
+      <span class="chip">Elevador</span>
+      <span class="chip">Reforma integral antes da 1ª locação</span>
+    </div>
+
+    <div class="callout green">
+      <strong>✔ Diferencial exclusivo: 2 vagas escrituradas</strong>
+      O apartamento 502 é a <strong>única unidade do Edifício São Bernardo com 2 vagas escrituradas</strong>. Todos os demais apartamentos do condomínio possuem até 1 vaga. Esse diferencial concreto e documentado reforça tecnicamente o pedido na faixa de R$ 5.900–R$ 6.000 e deve ser mencionado explicitamente na negociação.
+    </div>
+
+    <div class="databox">
+<span class="lbl">ALUGUEL VIGENTE  </span><span class="val">R$ 4.621,54</span>  →  R$ 48,14 / m²
+<span class="lbl">CONDOMÍNIO       </span><span class="val">R$ 2.211,77</span>
+<span class="lbl">TAXA DE SEGURANÇA</span><span class="val">R$   145,00</span>
+<span class="lbl">IPTU MENSAL      </span><span class="val">R$   361,60</span>  (10× ao ano)
+<span class="lbl">─────────────────</span>
+<span class="lbl">CUSTO TOTAL OCUP.</span><span class="val">R$ 7.539,91</span>  /mês
+<span class="lbl">ENCARGOS FIXOS   </span><span class="val">R$ 2.918,37</span>  (condom. + seg. + IPTU)
+    </div>
+
+    <h3>Linha do tempo contratual</h3>
+    <p>O contrato que se renova tem como referência uma locação com valor fixado em período de baixíssima inflação de aluguel. Qualquer novo instrumento de 30 meses autoriza, por acordo, a reposição a mercado (art. 18 da Lei n.º 8.245/1991).</p>
+
+    <div class="timeline-bar">
+      <div style="display:flex;justify-content:space-between;font-size:.85rem;color:var(--muted);margin-bottom:4px">
+        <span>Início da locação</span>
+        <span>Data-base do estudo: abr/2026</span>
+        <span>Renovação proposta: mai/2026</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill" style="width:78%" data-label="Renovação →"></div>
+      </div>
+      <div class="tbar-labels">
+        <span>Contrato original</span>
+        <span>↑ Hoje</span>
+        <span>Novo contrato (30 meses)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ ÍNDICES ════════════ -->
+  <section id="indices">
+    <h2><span class="num">03 /</span> Índices de Mercado e Inflação</h2>
+
+    <p>O IGP-M isolado não recompõe este caso. Veja por quê:</p>
+
+    <div class="idx-grid">
+      <div class="idx-card">
+        <div class="idx-name">IGP-M — 12 meses até abr/2026</div>
+        <div class="idx-pct negative">+0,61%</div>
+        <div class="idx-result">Reajuste pelo índice contratual tradicional levaria o aluguel de R$ 4.621,54 para apenas <strong>R$ 4.649,71</strong>. Completamente inadequado para reposicionamento.</div>
+      </div>
+      <div class="idx-card">
+        <div class="idx-name">IPCA — 12 meses até mar/2026</div>
+        <div class="idx-pct neutral">+4,14%</div>
+        <div class="idx-result">Reposição inflacionária pelo índice de consumo sugeriria <strong>R$ 4.812,68</strong>. Melhor, mas ainda não reflete o mercado de novos aluguéis.</div>
+      </div>
+      <div class="idx-card">
+        <div class="idx-name">IPCA-15 — 12 meses até abr/2026</div>
+        <div class="idx-pct neutral">+4,37%</div>
+        <div class="idx-result">Variante do IPCA, também compatível com reposição ao consumidor. Levaria o aluguel a <strong>R$ 4.823,51</strong>.</div>
+      </div>
+      <div class="idx-card">
+        <div class="idx-name">FipeZAP Locação — Rio de Janeiro<br><small>12 meses até mar/2026</small></div>
+        <div class="idx-pct positive">+11,03%</div>
+        <div class="idx-result">Este é o índice que mede anúncios de novos aluguéis no mercado. Preço médio no Rio: <strong>R$ 57,61/m²</strong>. É o referencial correto para o reposicionamento.</div>
+      </div>
+    </div>
+
+    <div class="callout teal">
+      <strong>Argumento central para a negociação</strong>
+      A tese não é "reajuste pelo IGP-M". É "novo aluguel por acordo, aderente a mercado" — art. 18. O IGP-M ficou muito abaixo da realidade dos novos aluguéis no Rio (+11,03% FipeZAP). Mesmo pedindo R$ 6.000, o imóvel ficaria em <strong>R$ 62,50/m²</strong> — apenas 8,5% acima do preço médio de mercado do Rio segundo o FipeZAP.
+    </div>
+
+    <ul style="list-style:none;padding:0;margin:20px 0;display:flex;flex-direction:column;gap:8px;">
+      <li style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:12px 16px;background:var(--red2);border:1px solid #e8c8c8;border-left:4px solid var(--red);border-radius:var(--r);">
+        <span style="font-size:.9rem;color:var(--ink2);">Reajuste pelo <strong>IGP-M</strong> <span style="color:var(--muted);font-size:.85rem;">(+0,61%)</span></span>
+        <span style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--red);white-space:nowrap;">R$ 4.650</span>
+        <span style="font-size:.78rem;padding:3px 9px;background:var(--red);color:#fff;border-radius:99px;white-space:nowrap;">insuficiente</span>
+      </li>
+      <li style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:12px 16px;background:var(--warn-soft);border:1px solid #e8d8a0;border-left:4px solid #b8892a;border-radius:var(--r);">
+        <span style="font-size:.9rem;color:var(--ink2);">Reajuste pelo <strong>IPCA</strong> <span style="color:var(--muted);font-size:.85rem;">(+4,14%)</span></span>
+        <span style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#b8892a;white-space:nowrap;">R$ 4.813</span>
+        <span style="font-size:.78rem;padding:3px 9px;background:#b8892a;color:#fff;border-radius:99px;white-space:nowrap;">abaixo do mercado</span>
+      </li>
+      <li style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:12px 16px;background:var(--warn-soft);border:1px solid #e8d8a0;border-left:4px solid #b8892a;border-radius:var(--r);">
+        <span style="font-size:.9rem;color:var(--ink2);">Reajuste pelo <strong>IPCA-15</strong> <span style="color:var(--muted);font-size:.85rem;">(+4,37%)</span></span>
+        <span style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#b8892a;white-space:nowrap;">R$ 4.824</span>
+        <span style="font-size:.78rem;padding:3px 9px;background:#b8892a;color:#fff;border-radius:99px;white-space:nowrap;">abaixo do mercado</span>
+      </li>
+      <li style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:12px 16px;background:var(--paper2);border:1px solid var(--rule);border-left:4px solid var(--muted);border-radius:var(--r);">
+        <span style="font-size:.9rem;color:var(--ink2);">Mediana dos <strong>comparáveis</strong> <span style="color:var(--muted);font-size:.85rem;">(R$/m² × 96 m²)</span></span>
+        <span style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--ink2);white-space:nowrap;">R$ 6.720</span>
+        <span style="font-size:.78rem;padding:3px 9px;background:var(--ink2);color:#fff;border-radius:99px;white-space:nowrap;">referência de mercado</span>
+      </li>
+      <li style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:12px 16px;background:var(--paper2);border:1px solid var(--rule);border-left:4px solid var(--muted);border-radius:var(--r);">
+        <span style="font-size:.9rem;color:var(--ink2);">Sinal auxiliar — <strong>Ed. São Bernardo</strong> <span style="color:var(--muted);font-size:.85rem;">(QuintoAndar)</span></span>
+        <span style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--ink2);white-space:nowrap;">R$ 6.140</span>
+        <span style="font-size:.78rem;padding:3px 9px;background:var(--ink2);color:#fff;border-radius:99px;white-space:nowrap;">média do próprio edifício</span>
+      </li>
+      <li style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:12px 16px;background:var(--teal2);border:1px solid #a8ccc8;border-left:4px solid var(--teal);border-radius:var(--r);">
+        <span style="font-size:.9rem;color:var(--ink2);"><strong>Pedido recomendado</strong> <span style="color:var(--muted);font-size:.85rem;">(R$ 62,50/m²)</span></span>
+        <span style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--teal);white-space:nowrap;">R$ 6.000</span>
+        <span style="font-size:.78rem;padding:3px 9px;background:var(--teal);color:#fff;border-radius:99px;white-space:nowrap;">âncora de negociação</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ════════════ CALCULADORA ════════════ -->
+  <section id="calculadora">
+    <h2><span class="num">04 /</span> Calculadora Interativa</h2>
+    <p>Ajuste o valor de aluguel e veja o custo total que o inquilino vai perceber — e onde esse número cai na distribuição da amostra comparável.</p>
+
+    <div class="calc-wrap">
+      <h3>Simulador de custo total</h3>
+      <div class="slider-row">
+        <label>Aluguel proposto <span id="sliderValLabel">R$ 5.800</span></label>
+        <input type="range" id="sliderAluguel" min="4500" max="6500" step="50" value="5800">
+      </div>
+      <div class="calc-result">
+        <div class="cr-item">
+          <div class="cr-lbl">Aluguel / m²</div>
+          <div class="cr-val" id="crPorM2">R$ 60,42</div>
+        </div>
+        <div class="cr-item">
+          <div class="cr-lbl">Encargos fixos</div>
+          <div class="cr-val">R$ 2.918</div>
+        </div>
+        <div class="cr-item">
+          <div class="cr-lbl">Custo total ocupante</div>
+          <div class="cr-val total" id="crTotal">R$ 8.718</div>
+        </div>
+      </div>
+      <div id="crComment" style="margin-top:14px;font-size:.9rem;color:var(--muted);padding-top:12px;border-top:1px solid var(--rule2)"></div>
+    </div>
+  </section>
+
+  <!-- ════════════ COMPARÁVEIS ════════════ -->
+  <section id="comparaveis">
+    <h2><span class="num">05 /</span> Comparáveis de Mercado</h2>
+
+    <p>Amostra de 11 anúncios coletados em Jardim Botânico e Lagoa em 29/04/2026, privilegiando 3 quartos, área próxima, portaria/elevador quando disponíveis. Dois links do Imovelweb retornaram erro 410 no momento da pesquisa e foram descartados.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Endereço / Bairro</th>
+            <th>m²</th>
+            <th>Qtos</th>
+            <th>Suítes</th>
+            <th>Vagas</th>
+            <th>Aluguel</th>
+            <th>Cond.</th>
+            <th>IPTU</th>
+            <th>R$/m²</th>
+            <th>Custo total *</th>
+            <th>Fonte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Imóvel objeto -->
+          <tr class="subj-row">
+            <td>Custódio Serrão 14/502 — Lagoa <em style="font-size:.78rem;color:var(--gold)">(imóvel objeto)</em></td>
+            <td>96</td><td>3</td><td>1</td><td>2</td>
+            <td>R$ 4.622 (atual)<br><strong style="color:var(--teal)">R$ 6.000 (proposto)</strong></td>
+            <td>R$ 2.212</td><td>R$ 362</td>
+            <td>48,14 → <strong>62,50</strong></td>
+            <td>R$ 7.540 → <strong>R$ 8.918</strong></td>
+            <td>—</td>
+          </tr>
+          <!-- Comparáveis -->
+          <tr>
+            <td>R. Lópes Quintas, Jardim Botânico</td>
+            <td>110</td><td>3</td><td>—</td><td>1</td>
+            <td>R$ 4.146</td><td>R$ 1.513</td><td>R$ 247</td>
+            <td>37,69</td><td>R$ 6.106</td>
+            <td><a href="https://www.quintoandar.com.br/imovel/893164988/alugar/apartamento-3-quartos-jardim-botanico-rio-de-janeiro" target="_blank" rel="noopener">QuintoAndar ↗</a></td>
+          </tr>
+          <tr>
+            <td>R. Jardim Botânico, Jardim Botânico</td>
+            <td>92</td><td>3</td><td>—</td><td>1</td>
+            <td>R$ 6.500</td><td>R$ 1.500</td><td>R$ 350</td>
+            <td>70,65</td><td>R$ 8.550</td>
+            <td><a href="https://www.imovelweb.com.br/propriedades/lindo-apartamento-de-3-quartos-no-jardim-botanico-3033984325.html" target="_blank" rel="noopener">Imovelweb ↗</a></td>
+          </tr>
+          <tr>
+            <td>R. Pio Correia, Jardim Botânico</td>
+            <td>90</td><td>3</td><td>1</td><td>2</td>
+            <td>R$ 6.500</td><td>R$ 1.545</td><td>R$ 341</td>
+            <td>72,22</td><td>R$ 8.586</td>
+            <td><a href="https://www.zapimoveis.com.br/imovel/aluguel-apartamento-3-quartos-jardim-botanico-rio-de-janeiro-90m2-id-2880095989/" target="_blank" rel="noopener">ZAP Imóveis ↗</a></td>
+          </tr>
+          <tr>
+            <td>R. Visconde da Graça, Jardim Botânico</td>
+            <td>110</td><td>3</td><td>1</td><td>1</td>
+            <td>R$ 7.700</td><td>R$ 980</td><td>R$ 437</td>
+            <td>70,00</td><td>R$ 9.317</td>
+            <td><a href="https://www.zapimoveis.com.br/imovel/aluguel-apartamento-3-quartos-jardim-botanico-rio-de-janeiro-110m2-id-2873326620/" target="_blank" rel="noopener">ZAP Imóveis ↗</a></td>
+          </tr>
+          <tr>
+            <td>R. Benjamim Batista, Jardim Botânico</td>
+            <td>90</td><td>3</td><td>1</td><td>—</td>
+            <td>R$ 8.500</td><td>R$ 950</td><td>R$ 42</td>
+            <td>94,44</td><td>R$ 9.692</td>
+            <td><a href="https://www.zapimoveis.com.br/imovel/aluguel-apartamento-3-quartos-jardim-botanico-rio-de-janeiro-90m2-id-2877432139/" target="_blank" rel="noopener">ZAP Imóveis ↗</a></td>
+          </tr>
+          <tr>
+            <td>Av. Epitácio Pessoa, Lagoa</td>
+            <td>125</td><td>3</td><td>1</td><td>1</td>
+            <td>R$ 6.000</td><td>R$ 2.100</td><td>R$ 584</td>
+            <td>48,00</td><td>R$ 8.884</td>
+            <td><a href="https://www.quintoandar.com.br/imovel/894514319/alugar/apartamento-3-quartos-lagoa-rio-de-janeiro" target="_blank" rel="noopener">QuintoAndar ↗</a></td>
+          </tr>
+          <tr>
+            <td>Av. Epitácio Pessoa, Lagoa</td>
+            <td>125</td><td>3</td><td>1</td><td>1</td>
+            <td>R$ 8.500</td><td>R$ 2.300</td><td>R$ 701</td>
+            <td>68,00</td><td>R$ 11.701</td>
+            <td><a href="https://www.quintoandar.com.br/imovel/894151955/alugar/apartamento-3-quartos-lagoa-rio-de-janeiro" target="_blank" rel="noopener">QuintoAndar ↗</a></td>
+          </tr>
+          <tr>
+            <td>Av. Epitácio Pessoa, Lagoa</td>
+            <td>126</td><td>3</td><td>1</td><td>1</td>
+            <td>R$ 8.500</td><td>R$ 2.118</td><td>R$ 334</td>
+            <td>67,46</td><td>R$ 11.152</td>
+            <td><a href="https://www.quintoandar.com.br/imovel/892899424/alugar/apartamento-3-quartos-lagoa-rio-de-janeiro" target="_blank" rel="noopener">QuintoAndar ↗</a></td>
+          </tr>
+          <tr>
+            <td>Av. Epitácio Pessoa, Lagoa</td>
+            <td>126</td><td>3</td><td>1</td><td>1</td>
+            <td>R$ 8.500</td><td>R$ 2.200</td><td>R$ 576</td>
+            <td>67,46</td><td>R$ 11.476</td>
+            <td><a href="https://www.quintoandar.com.br/imovel/895389910/alugar/apartamento-3-quartos-lagoa-rio-de-janeiro" target="_blank" rel="noopener">QuintoAndar ↗</a></td>
+          </tr>
+          <tr>
+            <td>R. Baronesa de Poconé, Lagoa</td>
+            <td>154</td><td>3</td><td>2</td><td>2</td>
+            <td>R$ 11.000</td><td>R$ 2.393</td><td>R$ 904</td>
+            <td>71,43</td><td>R$ 14.497</td>
+            <td><a href="https://www.quintoandar.com.br/imovel/895409942/alugar/apartamento-3-quartos-lagoa-rio-de-janeiro" target="_blank" rel="noopener">QuintoAndar ↗</a></td>
+          </tr>
+          <tr>
+            <td>Av. Epitácio Pessoa, Lagoa</td>
+            <td>117</td><td>3</td><td>1</td><td>2</td>
+            <td>R$ 9.900</td><td>R$ 2.585</td><td>R$ 700</td>
+            <td>84,62</td><td>R$ 13.385</td>
+            <td><a href="https://www.quintoandar.com.br/imovel/893644846/alugar/apartamento-3-quartos-lagoa-rio-de-janeiro" target="_blank" rel="noopener">QuintoAndar ↗</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:.82rem;color:var(--muted)">* Custo total = aluguel + condomínio + IPTU + R$ 200 (adicional analítico). QA = QuintoAndar · ZAP = ZAP Imóveis · IW = Imovelweb. Onde algum dado não estava expresso no anúncio, consta "—". ★ O apto 502 é a <strong>única unidade do Edifício São Bernardo com 2 vagas escrituradas</strong>.</p>
+
+    <div class="databox">
+<span class="lbl">AMOSTRA            </span>11 anúncios (Jardim Botânico + Lagoa)
+<span class="lbl">R$/m²: </span>Q1 = 67,46  |  <span class="val">mediana = 70,00</span>  |  Q3 = 71,83
+<span class="lbl">CUSTO TOTAL:  </span>Q1 = R$ 8.735  |  <span class="val">mediana = R$ 9.692</span>  |  Q3 = R$ 11.589
+<span class="lbl">ENCARGOS FIXOS: </span>Q1 = R$ 2.005  |  mediana = R$ 2.652  |  Q3 = R$ 3.089
+<span class="lbl">ENCARGOS IMÓVEL OBJETO: </span><span class="val">R$ 2.918</span>  (acima da mediana — desconto técnico aplicável)
+    </div>
+
+    <h3>Nota metodológica sobre os encargos</h3>
+    <p>Os encargos fixos do imóvel (R$ 2.918,37) ficam <strong>acima da mediana da amostra</strong> (R$ 2.652). Isso justifica um desconto técnico de 10–15% sobre a mediana bruta de R$/m², levando o pedido para a faixa de R$ 5.800–R$ 6.000 em vez dos R$ 6.720 que a mediana pura indicaria. A lógica: o inquilino percebe o custo total, não apenas o aluguel.</p>
+  </section>
+
+  <!-- ════════════ RECOMENDAÇÃO ════════════ -->
+  <section id="recomendacao">
+    <h2><span class="num">06 /</span> Recomendação &amp; Estratégia de Negociação</h2>
+
+    <h3>Faixa recomendada — resumo numérico</h3>
+    <ul>
+      <li><strong>R$ 5.500</strong> → R$ 57,29/m². Custo total R$ 8.418. Abaixo do 1º quartil da amostra. Piso para manter inquilino sem vacância.</li>
+      <li><strong>R$ 5.800–5.900</strong> → R$ 60,42–61,46/m². Custo total R$ 8.718–8.818. Alinhado ao quartil inferior. <em>Zona-alvo de fechamento.</em></li>
+      <li><strong>R$ 6.000</strong> → R$ 62,50/m². Custo total R$ 8.918. Ainda abaixo da mediana da amostra. Defensável como âncora de abertura.</li>
+    </ul>
+
+    <div class="callout green">
+      <strong>Sinal auxiliar do próprio edifício + diferencial exclusivo</strong>
+      A página pública do Edifício São Bernardo no QuintoAndar exibe média das últimas negociações de <strong>R$ 6.140</strong>, com condomínio de R$ 1.980 e IPTU de R$ 211. Além disso, o apto 502 é a <strong>única unidade do condomínio com 2 vagas escrituradas</strong> — todos os demais possuem até 1 vaga. Esses dois fatores combinados tornam o pedido de R$ 6.000 não apenas defensável, mas tecnicamente fundamentado.
+    </div>
+
+    <h3>Scripts de negociação</h3>
+
+    <blockquote>
+      "Como vamos formalizar um novo contrato de 30 meses, reprecificamos o aluguel para patamar de mercado. O valor vigente ficou defasado em relação aos anúncios comparáveis de Jardim Botânico e Lagoa. Considerando a metragem, reforma, portaria 24 horas e dependência completa, proponho R$ 6.000 mensais. Para viabilizar a renovação com tranquilidade, consigo trabalhar até a faixa de R$ 5.800–R$ 5.900."
+      <cite>— Abertura da negociação</cite>
+    </blockquote>
+
+    <blockquote>
+      "O IGP-M sozinho não recompõe este caso. A referência aqui não é apenas inflação; é aderência ao preço de mercado de novos aluguéis. O FipeZAP mostrou alta de 11% nos aluguéis do Rio nos últimos 12 meses. Mesmo em R$ 5.900, o custo total do imóvel segue próximo ao quartil inferior dos comparáveis disponíveis."
+      <cite>— Se o inquilino invocar o índice contratual</cite>
+    </blockquote>
+
+    <blockquote>
+      "Se a prioridade for preservar a continuidade da locação e evitar o custo de vacância — busca de novo inquilino, período sem renda, eventuais reparos —, o piso final fica em R$ 5.500. Mas esse valor coloca o imóvel abaixo até do quartil inferior do mercado."
+      <cite>— Se a negociação travar</cite>
+    </blockquote>
+
+    <h3>Recomendação de indexador para o novo contrato</h3>
+    <p>Substituir o IGP-M por <strong>IPCA</strong> como indexador de reajuste anual — ou incluir cláusula que permita substituição por índice oficial equivalente em caso de extinção ou distorção. O IPCA é o índice de referência do Banco Central e tem comportamento mais estável que o IGP-M para este tipo de ativo.</p>
+  </section>
+
+  <!-- ════════════ JURÍDICO ════════════ -->
+  <section id="juridico">
+    <h2><span class="num">07 /</span> Aspectos Jurídicos</h2>
+
+    <div class="legal-item">
+      <div class="legal-icon">§</div>
+      <div>
+        <strong>Base legal para o novo valor — art. 18, Lei n.º 8.245/1991</strong>
+        <p>Nas renovações, o novo aluguel pode ser fixado de comum acordo entre as partes, independentemente de qualquer reajuste pelo índice contratual. O contrato de 30 meses encerrado ou em vias de renovação autoriza o reposicionamento a mercado sem necessidade de ação revisional.</p>
+      </div>
+    </div>
+
+    <div class="legal-item">
+      <div class="legal-icon">§</div>
+      <div>
+        <strong>Prorrogação por prazo indeterminado</strong>
+        <p>Se a locação completou 30 meses sem oposição formal do locador, prorroga-se por prazo indeterminado. A formalização agora é juridicamente adequada: o locador pode propor novos termos a qualquer momento, e o inquilino tem 30 dias para aceitar ou desocupar — o que torna a negociação amigável preferível em todos os cenários.</p>
+      </div>
+    </div>
+
+    <div class="legal-item">
+      <div class="legal-icon">§</div>
+      <div>
+        <strong>Encargos ordinários e extraordinários — art. 22 e 23</strong>
+        <p>A Lei atribui ao <strong>locador</strong> as despesas extraordinárias de condomínio (obras, constituição de fundo de reserva). Ao <strong>locatário</strong>, as despesas ordinárias e eventual reposição do fundo de reserva quando utilizado para custear despesas ordinárias. Os R$ 200 adicionais deste relatório são premissa analítica de comparação — não devem ser repassados automaticamente sem conferir a natureza exata de cada rubrica no boleto condominial.</p>
+      </div>
+    </div>
+
+    <div class="callout amber">
+      <strong>Ponto de atenção prático</strong>
+      Antes de assinar o novo contrato, solicite à administradora a <strong>discriminação das rubricas do condomínio</strong> (ordinárias vs. extraordinárias) para verificar se há encargos que, por lei, deveriam estar sendo cobertos pelo locador — o que impactaria o cálculo do custo total apresentado ao inquilino.
+    </div>
+  </section>
+
+  <!-- ════════════ FONTES ════════════ -->
+  <section id="fontes">
+    <h2><span class="num">08 /</span> Fontes</h2>
+    <ul class="sources">
+      <li><a href="https://portalibre.fgv.br/press-releases/igp-m-de-abril-de-2026" target="_blank" rel="noopener">FGV IBRE — IGP-M de abril de 2026</a></li>
+      <li><a href="https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/46377-em-marco-ipca-vai-a-0-88" target="_blank" rel="noopener">IBGE — IPCA de março de 2026</a></li>
+      <li><a href="https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/46482-ipca-15-foi-de-0-89-em-abril" target="_blank" rel="noopener">IBGE — IPCA-15 de abril de 2026</a></li>
+      <li><a href="https://www.datazap.com.br/wp-content/uploads/2026/04/fipezap-202603-residencial-locacao.pdf" target="_blank" rel="noopener">DataZAP / FipeZAP — Informe de março de 2026, locação residencial</a></li>
+      <li><a href="https://www.quintoandar.com.br/condominio/edificio-sao-bernardo-lagoa-rio-de-janeiro-2drrsm51gd" target="_blank" rel="noopener">QuintoAndar — Edifício São Bernardo (dados auxiliares)</a></li>
+      <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8245.htm" target="_blank" rel="noopener">Planalto — Lei n.º 8.245/1991 (Lei do Inquilinato)</a></li>
+      <li><a href="https://www2.senado.leg.br/bdsf/bitstream/handle/id/496313/000880424.pdf" target="_blank" rel="noopener">Senado Federal — Lei do Inquilinato consolidada</a></li>
+      <li>Links individuais dos comparáveis disponíveis na tabela da seção 05.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <span>Custódio Serrão 14 / 502 — Relatório de Renovação · Maio 2026</span>
+  <span>Para uso interno da administradora. Dados de mercado coletados em 29/04/2026.</span>
+</footer>
+
+<script>
+  // ── Calculadora interativa ──────────────────────────────────────────
+  const ENCARGOS = 2918.37; // condomínio + segurança + IPTU
+  const M2 = 96;
+  const Q1_CUSTO = 8735;
+  const MED_CUSTO = 9692;
+
+  const slider    = document.getElementById('sliderAluguel');
+  const lblVal    = document.getElementById('sliderValLabel');
+  const crPorM2   = document.getElementById('crPorM2');
+  const crTotal   = document.getElementById('crTotal');
+  const crComment = document.getElementById('crComment');
+
+  function fmt(v) {
+    return 'R$ ' + v.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+  }
+
+  function update() {
+    const aluguel = +slider.value;
+    const pm2 = (aluguel / M2).toFixed(2);
+    const total = aluguel + ENCARGOS;
+
+    lblVal.textContent  = fmt(aluguel);
+    crPorM2.textContent = 'R$ ' + pm2.replace('.', ',') + '/m²';
+    crTotal.textContent = fmt(total);
+
+    let comment = '';
+    if (total < Q1_CUSTO) {
+      comment = `⬇ Custo total de ${fmt(total)} <strong>abaixo do 1º quartil da amostra (${fmt(Q1_CUSTO)})</strong>. Valor conservador — preserva inquilino mas deixa o imóvel subprecificado.`;
+    } else if (total <= 9000) {
+      comment = `✔ Custo total de ${fmt(total)} <strong>alinhado ao quartil inferior da amostra</strong>. Zona-alvo recomendada para fechamento.`;
+    } else if (total <= MED_CUSTO) {
+      comment = `✔ Custo total de ${fmt(total)} posicionado entre o 1º quartil e a mediana da amostra (${fmt(MED_CUSTO)}). Tecnicamente defensável.`;
+    } else {
+      comment = `⬆ Custo total de ${fmt(total)} <strong>acima da mediana da amostra (${fmt(MED_CUSTO)})</strong>. Pode dificultar a negociação — verifique se o conjunto de diferenciais do imóvel justifica.`;
+    }
+    crComment.innerHTML = comment;
+  }
+
+  slider.addEventListener('input', update);
+  update();
+
+  // ── Animate bars on load ────────────────────────────────────────────
+  document.querySelectorAll('.bar-fill').forEach(el => {
+    const w = el.style.width;
+    el.style.width = '0';
+    setTimeout(() => { el.style.width = w; }, 200);
+  });
+</script>
+
+</body>
+</html>
