@@ -843,9 +843,37 @@
       </div>
       <div id="crComment" style="margin-top:1rem;font-size:15px;line-height:1.6;padding-top:1rem;border-top:1px solid var(--rule2);transition:color .2s;min-height:2.4em"></div>
     </div>
-  </section>
 
-  <!-- ════════════ COMPARÁVEIS ════════════ -->
+    <!-- Diagrama didático de quartis -->
+    <div style="margin:16px 0 0;padding:16px 20px;background:var(--paper2);border:1px solid var(--rule);border-radius:var(--r);">
+      <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:12px;">O que são os quartis?</p>
+      <div style="position:relative;height:36px;border-radius:6px;overflow:hidden;display:flex;">
+        <div style="flex:1;background:#c8d9cc;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:600;color:#2a5e35;">0–25%</div>
+        <div style="flex:1;background:#a8c4ae;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:600;color:#1f4d2d;">25–50%</div>
+        <div style="flex:1;background:#6fa07a;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:600;color:#fff;">50–75%</div>
+        <div style="flex:1;background:#1a6359;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:600;color:#fff;">75–100%</div>
+      </div>
+      <div style="display:flex;margin-top:8px;gap:0;">
+        <div style="flex:1;text-align:center;">
+          <span style="display:inline-block;background:var(--teal2);color:var(--teal);font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:99px;border:1px solid #a8ccc8;">Q1 — Quartil 1</span>
+          <p style="font-size:.7rem;color:var(--muted);margin-top:4px;line-height:1.4">25% dos imóveis mais baratos da amostra</p>
+        </div>
+        <div style="flex:1;text-align:center;">
+          <span style="display:inline-block;background:var(--teal2);color:var(--teal);font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:99px;border:1px solid #a8ccc8;">Q2 — Quartil 2</span>
+          <p style="font-size:.7rem;color:var(--muted);margin-top:4px;line-height:1.4">Do 25º ao 50º percentil — onde fica a mediana</p>
+        </div>
+        <div style="flex:1;text-align:center;">
+          <span style="display:inline-block;background:var(--teal2);color:var(--teal);font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:99px;border:1px solid #a8ccc8;">Q3 — Quartil 3</span>
+          <p style="font-size:.7rem;color:var(--muted);margin-top:4px;line-height:1.4">Do 50º ao 75º percentil — acima da mediana</p>
+        </div>
+        <div style="flex:1;text-align:center;">
+          <span style="display:inline-block;background:var(--teal2);color:var(--teal);font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:99px;border:1px solid #a8ccc8;">Q4 — Quartil 4</span>
+          <p style="font-size:.7rem;color:var(--muted);margin-top:4px;line-height:1.4">25% dos imóveis mais caros da amostra</p>
+        </div>
+      </div>
+      <p style="font-size:.74rem;color:var(--muted);margin-top:10px;border-top:1px dashed var(--rule);padding-top:8px;">Na calculadora acima, o imóvel objeto está posicionado no <strong style="color:var(--teal)">Q1–Q2</strong> da amostra de comparáveis — ou seja, entre os 25% a 50% mais acessíveis do mercado pesquisado.</p>
+    </div>
+  </section>
   <section id="comparaveis">
     <h2><span class="num">05 /</span> Comparáveis de Mercado</h2>
 
@@ -963,7 +991,14 @@
 
     <p style="font-size:.82rem;color:var(--muted)">* Custo total = aluguel + condomínio + IPTU + R$ 200 (adicional analítico). QA = QuintoAndar · ZAP = ZAP Imóveis · IW = Imovelweb. Onde algum dado não estava expresso no anúncio, consta "—". ★ O apto 502 é a <strong>única unidade do Edifício São Bernardo com 2 vagas escrituradas</strong>.</p>
 
-    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:var(--r);padding:18px 22px;margin:16px 0;">
+    <div style="display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 10px;align-items:center;">
+      <span style="font-size:.74rem;color:var(--muted);font-weight:500;margin-right:4px;">Legenda:</span>
+      <span style="background:var(--paper2);border:1px solid var(--rule);color:var(--ink2);font-size:.74rem;font-weight:600;padding:3px 10px;border-radius:99px;">Q1 = Quartil 1 &nbsp;·&nbsp; 25% mais baratos</span>
+      <span style="background:var(--teal2);border:1px solid #a8ccc8;color:var(--teal);font-size:.74rem;font-weight:600;padding:3px 10px;border-radius:99px;">Q2 = mediana &nbsp;·&nbsp; valor central</span>
+      <span style="background:var(--paper2);border:1px solid var(--rule);color:var(--ink2);font-size:.74rem;font-weight:600;padding:3px 10px;border-radius:99px;">Q3 = Quartil 3 &nbsp;·&nbsp; 75% mais baratos</span>
+    </div>
+
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:var(--r);padding:18px 22px;margin:0 0 16px;">
       <ul style="list-style:none;padding:0;margin:0 0 14px;display:flex;flex-direction:column;gap:9px;">
         <li style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
           <span style="display:flex;align-items:baseline;gap:8px;font-size:.88rem;color:var(--muted);"><span style="color:var(--gold);font-size:.65rem;">●</span> Amostra</span>
