@@ -7,7 +7,7 @@
   <meta name="description" content="Estudo comparativo de mercado e recomendação para renovação contratual — Lagoa, Rio de Janeiro. Maio 2026.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --ink:      #1a1814;
@@ -35,8 +35,8 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 17px;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15.5px;
       line-height: 1.65;
       color: var(--ink);
       background: var(--paper);
@@ -152,8 +152,8 @@
       gap: 12px;
     }
     h2 .num {
-      font-family: 'Source Serif 4', serif;
-      font-size: .75rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .72rem;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--gold);
@@ -315,15 +315,21 @@
     .neutral  { color: var(--muted); }
 
     /* ── CALCULATOR ────────────────────────── */
+    :root { --calc-thumb-color: var(--rule); }
     .calc-wrap {
       background: var(--cream);
       border: 1px solid var(--rule);
       border-radius: var(--r);
       padding: 22px 24px;
       margin: 20px 0;
-      box-shadow: var(--shadow);
+      box-shadow: 0 4px 6px rgba(26,24,20,.06), 0 8px 24px rgba(26,24,20,.09), 0 1px 2px rgba(26,24,20,.04);
+      transition: box-shadow .25s ease, transform .25s ease;
     }
-    .calc-wrap .calc-title { font-size: 20px; font-weight: 700; color: var(--ink); margin: 0 0 1.1rem; font-family: 'Playfair Display', serif; }
+    .calc-wrap:hover {
+      box-shadow: 0 8px 16px rgba(26,24,20,.10), 0 20px 48px rgba(26,24,20,.14), 0 2px 4px rgba(26,24,20,.06);
+      transform: translateY(-3px);
+    }
+    .calc-wrap .calc-title { font-size: 20px; font-weight: 600; color: var(--ink); margin: 0 0 1.1rem; font-family: 'Playfair Display', serif; }
     .slider-label-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
     .slider-label { font-size: 16px; color: var(--muted); }
     .slider-value { font-size: 22px; font-weight: 700; transition: color .2s; font-family: 'Playfair Display', serif; }
@@ -342,19 +348,24 @@
       appearance: none;
       width: 26px; height: 26px;
       border-radius: 50%;
-      border: 3px solid var(--rule);
+      border: 3px solid var(--calc-thumb-color);
       background: var(--cream);
       cursor: pointer;
-      transition: border-color .15s, transform .1s;
+      transition: border-color .2s, transform .1s, box-shadow .2s;
+    }
+    input[type=range]#sliderAluguel:hover {
+      cursor: pointer;
     }
     input[type=range]#sliderAluguel:hover::-webkit-slider-thumb {
-      border-color: var(--teal);
       cursor: pointer;
+      transform: scale(1.05);
+    }
+    input[type=range]#sliderAluguel:active {
+      cursor: grabbing;
     }
     input[type=range]#sliderAluguel:active::-webkit-slider-thumb {
       cursor: grabbing;
-      transform: scale(1.08);
-      border-color: var(--teal);
+      transform: scale(1.12);
     }
     .calc-result {
       display: grid;
@@ -991,13 +1002,16 @@
   // ── Calculadora interativa ──────────────────────────────────────────
   const ENCARGOS = 2718.37;
   const M2 = 96, Q1_CUSTO = 8735, MED_CUSTO = 9692;
-  const RED = '#8b2a2a', GREEN = '#1a6359', NEUTRAL = 'var(--muted)';
+  const RED   = '#e02020';
+  const GREEN = '#1a6359';
+  const NEUTRAL = 'var(--muted)';
 
   const slider    = document.getElementById('sliderAluguel');
   const lblVal    = document.getElementById('sliderValLabel');
   const crPorM2   = document.getElementById('crPorM2');
   const crTotal   = document.getElementById('crTotal');
   const crComment = document.getElementById('crComment');
+  const calcWrap  = document.querySelector('.calc-wrap');
 
   function fmt(v) {
     return 'R$ ' + Math.round(v).toLocaleString('pt-BR');
@@ -1030,6 +1044,9 @@
     crTotal.style.color   = color;
     crComment.style.color = color;
     crComment.innerHTML   = comment;
+
+    /* thumb border color via CSS variable on the root */
+    document.documentElement.style.setProperty('--calc-thumb-color', color === NEUTRAL ? 'var(--rule)' : color);
   }
 
   slider.addEventListener('input', update);
