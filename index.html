@@ -343,29 +343,55 @@
       outline: none;
       cursor: pointer;
     }
+    /* Chrome / Edge */
     input[type=range]#sliderAluguel::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 26px; height: 26px;
+      width: 28px; height: 28px;
       border-radius: 50%;
-      border: 3px solid var(--calc-thumb-color);
+      border: none;
       background: var(--cream);
+      box-shadow: 0 0 0 3px #d6cfc5;
       cursor: pointer;
-      transition: border-color .2s, transform .1s, box-shadow .2s;
+      transition: box-shadow .2s, transform .12s;
+    }
+    input[type=range]#sliderAluguel:hover::-webkit-slider-thumb {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+    input[type=range]#sliderAluguel:active::-webkit-slider-thumb {
+      cursor: grabbing;
+      transform: scale(1.18);
+    }
+    /* Firefox */
+    input[type=range]#sliderAluguel::-moz-range-thumb {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: none;
+      background: var(--cream);
+      box-shadow: 0 0 0 3px #d6cfc5;
+      cursor: pointer;
+      transition: box-shadow .2s, transform .12s;
+    }
+    input[type=range]#sliderAluguel:hover::-moz-range-thumb {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+    input[type=range]#sliderAluguel:active::-moz-range-thumb {
+      cursor: grabbing;
+      transform: scale(1.18);
+    }
+    /* Firefox track */
+    input[type=range]#sliderAluguel::-moz-range-track {
+      height: 5px;
+      border-radius: 99px;
+      background: var(--rule2);
     }
     input[type=range]#sliderAluguel:hover {
       cursor: pointer;
     }
-    input[type=range]#sliderAluguel:hover::-webkit-slider-thumb {
-      cursor: pointer;
-      transform: scale(1.05);
-    }
     input[type=range]#sliderAluguel:active {
       cursor: grabbing;
-    }
-    input[type=range]#sliderAluguel:active::-webkit-slider-thumb {
-      cursor: grabbing;
-      transform: scale(1.12);
     }
     .calc-result {
       display: grid;
@@ -893,12 +919,29 @@
 
     <p style="font-size:.82rem;color:var(--muted)">* Custo total = aluguel + condomínio + IPTU + R$ 200 (adicional analítico). QA = QuintoAndar · ZAP = ZAP Imóveis · IW = Imovelweb. Onde algum dado não estava expresso no anúncio, consta "—". ★ O apto 502 é a <strong>única unidade do Edifício São Bernardo com 2 vagas escrituradas</strong>.</p>
 
-    <div class="databox">
-<span class="lbl">AMOSTRA            </span>11 anúncios (Jardim Botânico + Lagoa)
-<span class="lbl">R$/m²: </span>Q1 = 67,46  |  <span class="val">mediana = 70,00</span>  |  Q3 = 71,83
-<span class="lbl">CUSTO TOTAL:  </span>Q1 = R$ 8.735  |  <span class="val">mediana = R$ 9.692</span>  |  Q3 = R$ 11.589
-<span class="lbl">ENCARGOS FIXOS: </span>Q1 = R$ 2.005  |  mediana = R$ 2.652  |  Q3 = R$ 3.089
-<span class="lbl">ENCARGOS IMÓVEL OBJETO: </span><span class="val">R$ 2.718</span>  (acima da mediana — desconto técnico aplicável)
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:var(--r);padding:18px 22px;margin:16px 0;">
+      <ul style="list-style:none;padding:0;margin:0 0 14px;display:flex;flex-direction:column;gap:9px;">
+        <li style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
+          <span style="display:flex;align-items:baseline;gap:8px;font-size:.88rem;color:var(--muted);"><span style="color:var(--gold);font-size:.65rem;">●</span> Amostra</span>
+          <span style="font-weight:600;color:var(--ink);font-size:.88rem;">11 anúncios (Jardim Botânico + Lagoa)</span>
+        </li>
+        <li style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:8px;border-top:1px dashed var(--rule);">
+          <span style="display:flex;align-items:baseline;gap:8px;font-size:.88rem;color:var(--muted);"><span style="color:var(--gold);font-size:.65rem;">●</span> R$/m² — Q1 / mediana / Q3</span>
+          <span style="font-family:'Playfair Display',serif;font-weight:700;color:var(--ink);">67,46 &nbsp;|&nbsp; <span style="color:var(--teal)">70,00</span> &nbsp;|&nbsp; 71,83</span>
+        </li>
+        <li style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
+          <span style="display:flex;align-items:baseline;gap:8px;font-size:.88rem;color:var(--muted);"><span style="color:var(--gold);font-size:.65rem;">●</span> Custo total — Q1 / mediana / Q3</span>
+          <span style="font-family:'Playfair Display',serif;font-weight:700;color:var(--ink);">R$ 8.735 &nbsp;|&nbsp; <span style="color:var(--teal)">R$ 9.692</span> &nbsp;|&nbsp; R$ 11.589</span>
+        </li>
+        <li style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
+          <span style="display:flex;align-items:baseline;gap:8px;font-size:.88rem;color:var(--muted);"><span style="color:var(--gold);font-size:.65rem;">●</span> Encargos fixos — Q1 / mediana / Q3</span>
+          <span style="font-family:'Playfair Display',serif;font-weight:700;color:var(--ink);">R$ 2.005 &nbsp;|&nbsp; <span style="color:var(--teal)">R$ 2.652</span> &nbsp;|&nbsp; R$ 3.089</span>
+        </li>
+      </ul>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;padding-top:12px;border-top:2px solid var(--rule);gap:12px;">
+        <span style="font-size:.9rem;font-weight:600;color:var(--ink2);">Encargos fixos — imóvel objeto <span style="font-size:.8rem;font-weight:400;color:var(--muted)">(acima da mediana — desconto técnico aplicável)</span></span>
+        <span style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--gold);">R$ 2.718</span>
+      </div>
     </div>
 
     <h3>Nota metodológica sobre os encargos</h3>
@@ -1045,8 +1088,14 @@
     crComment.style.color = color;
     crComment.innerHTML   = comment;
 
-    /* thumb border color via CSS variable on the root */
-    document.documentElement.style.setProperty('--calc-thumb-color', color === NEUTRAL ? 'var(--rule)' : color);
+    /* Dynamic style injection — only reliable way to update ::webkit-slider-thumb in real time */
+    const thumbColor = color === NEUTRAL ? '#d6cfc5' : color;
+    let styleTag = document.getElementById('thumbStyle');
+    if (!styleTag) { styleTag = document.createElement('style'); styleTag.id = 'thumbStyle'; document.head.appendChild(styleTag); }
+    styleTag.textContent = `
+      input[type=range]#sliderAluguel::-webkit-slider-thumb { box-shadow: 0 0 0 3px ${thumbColor} !important; }
+      input[type=range]#sliderAluguel::-moz-range-thumb    { box-shadow: 0 0 0 3px ${thumbColor} !important; }
+    `;
   }
 
   slider.addEventListener('input', update);
