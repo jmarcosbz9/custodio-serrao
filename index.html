@@ -319,35 +319,42 @@
       background: var(--cream);
       border: 1px solid var(--rule);
       border-radius: var(--r);
-      padding: 24px;
+      padding: 22px 24px;
       margin: 20px 0;
       box-shadow: var(--shadow);
     }
-    .calc-wrap h3 { margin-top: 0; }
-    .slider-row { margin-bottom: 18px; }
-    .slider-row label {
-      display: flex;
-      justify-content: space-between;
-      font-size: .9rem;
-      color: var(--ink2);
-      margin-bottom: 6px;
-    }
-    .slider-row label span { font-weight: 600; color: var(--teal); font-size: 1rem; }
-    input[type=range] {
+    .calc-wrap .calc-title { font-size: 20px; font-weight: 700; color: var(--ink); margin: 0 0 1.1rem; font-family: 'Playfair Display', serif; }
+    .slider-label-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+    .slider-label { font-size: 16px; color: var(--muted); }
+    .slider-value { font-size: 22px; font-weight: 700; transition: color .2s; font-family: 'Playfair Display', serif; }
+    input[type=range]#sliderAluguel {
       -webkit-appearance: none;
+      appearance: none;
       width: 100%;
-      height: 6px;
+      height: 5px;
       border-radius: 99px;
       background: var(--rule2);
       outline: none;
-    }
-    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      background: var(--teal);
       cursor: pointer;
-      box-shadow: 0 2px 6px rgba(26,99,89,.3);
+    }
+    input[type=range]#sliderAluguel::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      border: 3px solid var(--rule);
+      background: var(--cream);
+      cursor: pointer;
+      transition: border-color .15s, transform .1s;
+    }
+    input[type=range]#sliderAluguel:hover::-webkit-slider-thumb {
+      border-color: var(--teal);
+      cursor: pointer;
+    }
+    input[type=range]#sliderAluguel:active::-webkit-slider-thumb {
+      cursor: grabbing;
+      transform: scale(1.08);
+      border-color: var(--teal);
     }
     .calc-result {
       display: grid;
@@ -358,9 +365,9 @@
       border-top: 1px solid var(--rule);
     }
     .calc-result .cr-item { text-align: center; }
-    .calc-result .cr-lbl { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 4px; }
-    .calc-result .cr-val { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--ink); }
-    .calc-result .cr-val.total { color: var(--teal); font-size: 1.6rem; }
+    .calc-result .cr-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 4px; }
+    .calc-result .cr-val { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--ink); transition: color .2s; }
+    .calc-result .cr-val.total { font-size: 22px; transition: color .2s; }
 
     /* ── COMPARABLES TABLE ─────────────────── */
     .table-wrap {
@@ -704,11 +711,12 @@
     <p>Ajuste o valor de aluguel e veja o custo total que o inquilino vai perceber — e onde esse número cai na distribuição da amostra comparável.</p>
 
     <div class="calc-wrap">
-      <h3>Simulador de custo total</h3>
-      <div class="slider-row">
-        <label>Aluguel proposto <span id="sliderValLabel">R$ 5.800</span></label>
-        <input type="range" id="sliderAluguel" min="4500" max="6500" step="50" value="5800">
+      <p class="calc-title">Simulador de custo total</p>
+      <div class="slider-label-row">
+        <span class="slider-label">Aluguel proposto</span>
+        <span class="slider-value" id="sliderValLabel">R$ 5.800</span>
       </div>
+      <input type="range" id="sliderAluguel" min="4500" max="6500" step="50" value="5800">
       <div class="calc-result">
         <div class="cr-item">
           <div class="cr-lbl">Aluguel / m²</div>
@@ -723,7 +731,7 @@
           <div class="cr-val total" id="crTotal">R$ 8.718</div>
         </div>
       </div>
-      <div id="crComment" style="margin-top:14px;font-size:.9rem;color:var(--muted);padding-top:12px;border-top:1px solid var(--rule2)"></div>
+      <div id="crComment" style="margin-top:1rem;font-size:15px;line-height:1.6;padding-top:1rem;border-top:1px solid var(--rule2);transition:color .2s;min-height:2.4em"></div>
     </div>
   </section>
 
@@ -952,10 +960,9 @@
 
 <script>
   // ── Calculadora interativa ──────────────────────────────────────────
-  const ENCARGOS = 2918.37; // condomínio + segurança + IPTU
-  const M2 = 96;
-  const Q1_CUSTO = 8735;
-  const MED_CUSTO = 9692;
+  const ENCARGOS = 2918.37;
+  const M2 = 96, Q1_CUSTO = 8735, MED_CUSTO = 9692;
+  const RED = '#8b2a2a', GREEN = '#1a6359', NEUTRAL = 'var(--muted)';
 
   const slider    = document.getElementById('sliderAluguel');
   const lblVal    = document.getElementById('sliderValLabel');
@@ -964,29 +971,36 @@
   const crComment = document.getElementById('crComment');
 
   function fmt(v) {
-    return 'R$ ' + v.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    return 'R$ ' + Math.round(v).toLocaleString('pt-BR');
   }
 
   function update() {
     const aluguel = +slider.value;
     const pm2 = (aluguel / M2).toFixed(2);
     const total = aluguel + ENCARGOS;
+    let comment, color;
 
-    lblVal.textContent  = fmt(aluguel);
-    crPorM2.textContent = 'R$ ' + pm2.replace('.', ',') + '/m²';
-    crTotal.textContent = fmt(total);
-
-    let comment = '';
     if (total < Q1_CUSTO) {
+      color = RED;
       comment = `⬇ Custo total de ${fmt(total)} <strong>abaixo do 1º quartil da amostra (${fmt(Q1_CUSTO)})</strong>. Valor conservador — preserva inquilino mas deixa o imóvel subprecificado.`;
     } else if (total <= 9000) {
+      color = GREEN;
       comment = `✔ Custo total de ${fmt(total)} <strong>alinhado ao quartil inferior da amostra</strong>. Zona-alvo recomendada para fechamento.`;
     } else if (total <= MED_CUSTO) {
+      color = GREEN;
       comment = `✔ Custo total de ${fmt(total)} posicionado entre o 1º quartil e a mediana da amostra (${fmt(MED_CUSTO)}). Tecnicamente defensável.`;
     } else {
-      comment = `⬆ Custo total de ${fmt(total)} <strong>acima da mediana da amostra (${fmt(MED_CUSTO)})</strong>. Pode dificultar a negociação — verifique se o conjunto de diferenciais do imóvel justifica.`;
+      color = NEUTRAL;
+      comment = `⬆ Custo total de ${fmt(total)} <strong>acima da mediana (${fmt(MED_CUSTO)})</strong>. Verifique se os diferenciais do imóvel justificam.`;
     }
-    crComment.innerHTML = comment;
+
+    lblVal.textContent    = fmt(aluguel);
+    lblVal.style.color    = color;
+    crPorM2.textContent   = 'R$ ' + pm2.replace('.', ',') + '/m²';
+    crTotal.textContent   = fmt(total);
+    crTotal.style.color   = color;
+    crComment.style.color = color;
+    crComment.innerHTML   = comment;
   }
 
   slider.addEventListener('input', update);
