@@ -528,7 +528,6 @@
 
     /* ── MEDIANA TOOLTIP ───────────────────── */
     .mediana-tip {
-      position: relative;
       display: inline;
       font-weight: 700;
       font-size: 1.05em;
@@ -536,12 +535,9 @@
       border-bottom: 1px dashed var(--teal);
       cursor: help;
     }
-    .mediana-tip .tip-box {
+    #medianaTipBox {
       display: none;
-      position: absolute;
-      left: 50%;
-      bottom: calc(100% + 10px);
-      transform: translateX(-50%);
+      position: fixed;
       width: 300px;
       background: var(--ink);
       color: #e8e0d4;
@@ -551,11 +547,11 @@
       line-height: 1.6;
       font-weight: 400;
       text-align: left;
-      z-index: 100;
+      z-index: 9999;
+      box-shadow: 0 8px 32px rgba(26,24,20,.30);
       pointer-events: none;
-      box-shadow: 0 8px 32px rgba(26,24,20,.25);
     }
-    .mediana-tip .tip-box::after {
+    #medianaTipBox::after {
       content: '';
       position: absolute;
       top: 100%;
@@ -564,16 +560,15 @@
       border: 7px solid transparent;
       border-top-color: var(--ink);
     }
-    .mediana-tip .tip-title {
+    #medianaTipBox .tip-title {
       display: block;
       font-weight: 600;
       color: var(--gold);
-      margin-bottom: 6px;
-      font-size: 12px;
-      letter-spacing: .06em;
+      margin-bottom: 7px;
+      font-size: 11.5px;
+      letter-spacing: .07em;
       text-transform: uppercase;
     }
-    .mediana-tip:hover .tip-box { display: block; }
 
     /* ── RESPONSIVE ────────────────────────── */
     @media (max-width: 700px) {
@@ -665,7 +660,7 @@
         <div class="bar-val">R$ 6.000</div>
       </div>
       <div class="bar-row">
-        <div class="bar-label"><span class="mediana-tip">Mediana<span class="tip-box"><span class="tip-title">Por que usar a mediana e não a média?</span>A <strong style="color:#e8c97a">mediana</strong> é o valor do meio quando todos os imóveis são ordenados por preço. Ela ignora outliers — aquele apartamento de R$ 11.000 na amostra, por exemplo, não "puxa" o resultado para cima.<br><br>A <strong style="color:#e8c97a">média</strong> somaria todos os valores e dividiria pelo total, sendo distorcida por extremos. Nesta amostra, ela ficaria inflada pelos anúncios de maior preço, dando uma referência irreal para negociação.</span></span> comparáveis</div>
+        <div class="bar-label"><span class="mediana-tip" id="medianaTrigger">Mediana</span> comparáveis</div>
         <div class="bar-track"><div class="bar-fill mkt" style="width:112%;max-width:100%">mediana amostra</div></div>
         <div class="bar-val">R$ 6.720*</div>
       </div>
@@ -1158,5 +1153,43 @@
   });
 </script>
 
+<div id="medianaTipBox">
+  <span class="tip-title">Por que usar a mediana e não a média?</span>
+  A <strong style="color:#e8c97a">mediana</strong> é o valor do meio quando todos os imóveis são ordenados por preço — ela ignora outliers. O apartamento de R$ 11.000 na amostra, por exemplo, não "puxa" o resultado para cima.<br><br>
+  A <strong style="color:#e8c97a">média</strong> somaria todos os valores e dividiria pelo total, sendo distorcida pelos extremos. Nesta amostra, ficaria inflada pelos anúncios de maior preço, dando uma referência irreal para a negociação.
+</div>
+
+<script>
+  (function() {
+    const trigger = document.getElementById('medianaTrigger');
+    const tip     = document.getElementById('medianaTipBox');
+    if (!trigger || !tip) return;
+
+    trigger.addEventListener('mouseenter', function() {
+      tip.style.display = 'block';
+      const r = trigger.getBoundingClientRect();
+      const tw = tip.offsetWidth;
+      let left = r.left + r.width / 2 - tw / 2;
+      let top  = r.top - tip.offsetHeight - 12;
+      /* keep inside viewport horizontally */
+      left = Math.max(8, Math.min(left, window.innerWidth - tw - 8));
+      /* if not enough room above, flip below */
+      if (top < 8) {
+        top = r.bottom + 12;
+        tip.style.setProperty('--arrow-top', '-7px');
+        tip.style.setProperty('--arrow-border', 'transparent transparent var(--ink) transparent');
+      } else {
+        tip.style.removeProperty('--arrow-top');
+        tip.style.removeProperty('--arrow-border');
+      }
+      tip.style.left = left + 'px';
+      tip.style.top  = top  + 'px';
+    });
+
+    trigger.addEventListener('mouseleave', function() {
+      tip.style.display = 'none';
+    });
+  })();
+</script>
 </body>
 </html>
