@@ -612,7 +612,7 @@
       <div class="scard ideal">
         <div class="scard-label">Faixa ideal de fechamento</div>
         <div class="scard-val">R$ 6.100 – 6.200</div>
-        <div class="scard-sub">Zona confortável entre o piso e a âncora. Custo total R$ 8.818–8.918 — bem posicionado no Q1–Q2.</div>
+        <div class="scard-sub">Zona confortável no 2º quartil da amostra. Custo total R$ 8.818–8.918.</div>
       </div>
       <div class="scard max">
         <div class="scard-label">Âncora para abertura</div>
@@ -623,7 +623,7 @@
 
     <div class="callout green">
       <strong>Conclusão em uma linha</strong>
-      Proponha R$ 6.400. Aceite entre R$ 6.100 e R$ 6.200. Preserve R$ 6.050 como piso absoluto — 1º valor no intervalo Q1–Q2 da amostra.
+      Proponha R$ 6.400. Aceite entre R$ 6.100 e R$ 6.200. Preserve R$ 6.050 como piso absoluto — 1º valor no 2º quartil da amostra.
     </div>
 
     <p>O aluguel vigente de <strong>R$ 4.621,54</strong> corresponde a <strong>R$ 48,14/m²</strong> — abaixo do quartil inferior (R$ 67,46/m²) da amostra de comparáveis coletados em Jardim Botânico e Lagoa em 29/04/2026. A defasagem não é apenas inflacionária: o mercado de novos aluguéis no Rio cresceu <strong>11,03%</strong> em 12 meses (FipeZAP, março/2026), enquanto o IGP-M acumulou apenas <strong>0,61%</strong> no mesmo período.</p>
@@ -818,7 +818,7 @@
     <div class="calc-wrap">
       <p class="calc-title">Simulador de custo total</p>
       <div class="slider-label-row">
-        <span class="slider-label">Aluguel proposto</span>
+        <span class="slider-label">Valor do aluguel</span>
         <span class="slider-value" id="sliderValLabel">R$ 6.050</span>
       </div>
       <input type="range" id="sliderAluguel" min="4500" max="6500" step="50" value="6050">
@@ -841,7 +841,7 @@
 
     <!-- Diagrama didático de quartis -->
     <div style="margin:16px 0 0;padding:16px 20px;background:var(--paper2);border:1px solid var(--rule);border-radius:var(--r);">
-      <p style="font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:12px;">O que são os quartis?</p>
+      <p style="font-size:.88rem;color:var(--ink2);font-weight:500;margin-bottom:12px;">No simulador acima, o imóvel está posicionado no <strong style="color:var(--teal)">2º quartil</strong> da amostra de comparáveis — na faixa entre os 25% e os 50% do mercado pesquisado, ordenado do mais barato ao mais caro.</p>
       <div style="position:relative;height:36px;border-radius:6px;overflow:hidden;display:flex;">
         <div style="flex:1;background:#c8d9cc;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:600;color:#2a5e35;">0–25%</div>
         <div style="flex:1;background:#a8c4ae;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:600;color:#1f4d2d;">25–50%</div>
@@ -866,7 +866,7 @@
           <p style="font-size:.74rem;color:var(--muted);margin-top:4px;line-height:1.4">25% dos imóveis mais caros da amostra</p>
         </div>
       </div>
-      <p style="font-size:.78rem;color:var(--muted);margin-top:10px;border-top:1px dashed var(--rule);padding-top:8px;">Na calculadora acima, o imóvel objeto está posicionado no <strong style="color:var(--teal)">2º quartil</strong> da amostra de comparáveis — ou seja, na faixa entre os 25% e os 50% do mercado pesquisado, ordenado do mais barato ao mais caro.</p>
+
     </div>
   </section>
   <section id="comparaveis">
@@ -1028,7 +1028,7 @@
 
     <h3>Faixa recomendada — resumo numérico</h3>
     <ul>
-      <li><strong>R$ 6.050</strong> → R$ 63,02/m². Custo total R$ 8.768. 1º valor no intervalo Q1–Q2 da amostra. <em>Piso absoluto — sem subprecificação.</em></li>
+      <li><strong>R$ 6.050</strong> → R$ 63,02/m². Custo total R$ 8.768. 1º valor no 2º quartil da amostra. <em>Piso absoluto — sem subprecificação.</em></li>
       <li><strong>R$ 6.100–6.200</strong> → R$ 63,54–64,58/m². Custo total R$ 8.818–8.918. Confortavelmente entre Q1 e Q2. <em>Zona-alvo de fechamento.</em></li>
       <li><strong>R$ 6.400</strong> → R$ 66,67/m². Custo total R$ 9.118. Entre o 1º quartil e a mediana da amostra. <em>Âncora de abertura recomendada.</em></li>
     </ul>
@@ -1145,7 +1145,7 @@
       comment = `⬇ Custo total de ${fmt(total)} <strong>abaixo do 1º quartil da amostra (${fmt(Q1_CUSTO)})</strong>. Valor conservador — preserva inquilino mas deixa o imóvel subprecificado.`;
     } else if (total <= 9000) {
       color = GREEN;
-      comment = `✔ Custo total de ${fmt(total)} <strong>no intervalo Q1–Q2 da amostra</strong>. Zona-alvo recomendada para fechamento.`;
+      comment = `✔ Custo total de ${fmt(total)} <strong>no 2º quartil da amostra</strong>. Zona-alvo recomendada para fechamento.`;
     } else if (total <= MED_CUSTO) {
       color = GREEN;
       comment = `✔ Custo total de ${fmt(total)} posicionado entre o 1º quartil e a mediana da amostra (${fmt(MED_CUSTO)}). Tecnicamente defensável.`;
