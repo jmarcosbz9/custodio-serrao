@@ -607,7 +607,7 @@
       <div class="scard min">
         <div class="scard-label">Piso defensável</div>
         <div class="scard-val">R$ 6.050</div>
-        <div class="scard-sub">1º valor alinhado ao <span class="quartil-tip" id="quartilTrigger">quartil</span> inferior da amostra de Comparáveis de Mercado (item 05). Custo total R$ 8.768 — acima do Q1 (R$ 8.735).</div>
+        <div class="scard-sub">1º valor no intervalo Q1–Q2 da amostra de Comparáveis de Mercado (item 05). Custo total R$ 8.768 — imediatamente acima do <span class="quartil-tip" id="quartilTrigger">Q1</span> (R$ 8.735).</div>
       </div>
       <div class="scard ideal">
         <div class="scard-label">Faixa ideal de fechamento</div>
@@ -623,7 +623,7 @@
 
     <div class="callout green">
       <strong>Conclusão em uma linha</strong>
-      Proponha R$ 6.400. Aceite entre R$ 6.100 e R$ 6.200. Preserve R$ 6.050 como piso absoluto — 1º valor alinhado ao quartil inferior da amostra.
+      Proponha R$ 6.400. Aceite entre R$ 6.100 e R$ 6.200. Preserve R$ 6.050 como piso absoluto — 1º valor no intervalo Q1–Q2 da amostra.
     </div>
 
     <p>O aluguel vigente de <strong>R$ 4.621,54</strong> corresponde a <strong>R$ 48,14/m²</strong> — abaixo do quartil inferior (R$ 67,46/m²) da amostra de comparáveis coletados em Jardim Botânico e Lagoa em 29/04/2026. A defasagem não é apenas inflacionária: o mercado de novos aluguéis no Rio cresceu <strong>11,03%</strong> em 12 meses (FipeZAP, março/2026), enquanto o IGP-M acumulou apenas <strong>0,61%</strong> no mesmo período.</p>
@@ -1028,7 +1028,7 @@
 
     <h3>Faixa recomendada — resumo numérico</h3>
     <ul>
-      <li><strong>R$ 6.050</strong> → R$ 63,02/m². Custo total R$ 8.768. 1º valor alinhado ao quartil inferior da amostra. <em>Piso absoluto — sem subprecificação.</em></li>
+      <li><strong>R$ 6.050</strong> → R$ 63,02/m². Custo total R$ 8.768. 1º valor no intervalo Q1–Q2 da amostra. <em>Piso absoluto — sem subprecificação.</em></li>
       <li><strong>R$ 6.100–6.200</strong> → R$ 63,54–64,58/m². Custo total R$ 8.818–8.918. Confortavelmente entre Q1 e Q2. <em>Zona-alvo de fechamento.</em></li>
       <li><strong>R$ 6.400</strong> → R$ 66,67/m². Custo total R$ 9.118. Entre o 1º quartil e a mediana da amostra. <em>Âncora de abertura recomendada.</em></li>
     </ul>
@@ -1145,7 +1145,7 @@
       comment = `⬇ Custo total de ${fmt(total)} <strong>abaixo do 1º quartil da amostra (${fmt(Q1_CUSTO)})</strong>. Valor conservador — preserva inquilino mas deixa o imóvel subprecificado.`;
     } else if (total <= 9000) {
       color = GREEN;
-      comment = `✔ Custo total de ${fmt(total)} <strong>alinhado ao quartil inferior da amostra</strong>. Zona-alvo recomendada para fechamento.`;
+      comment = `✔ Custo total de ${fmt(total)} <strong>no intervalo Q1–Q2 da amostra</strong>. Zona-alvo recomendada para fechamento.`;
     } else if (total <= MED_CUSTO) {
       color = GREEN;
       comment = `✔ Custo total de ${fmt(total)} posicionado entre o 1º quartil e a mediana da amostra (${fmt(MED_CUSTO)}). Tecnicamente defensável.`;
