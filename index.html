@@ -516,14 +516,15 @@
     .sources li::before { content: '↗'; color: var(--teal); flex-shrink: 0; }
 
     /* ── MEDIANA TOOLTIP ───────────────────── */
-    .mediana-tip {
+    .mediana-tip, .media-tip {
       display: inline;
       font-weight: 700;
       font-size: 1.05em;
-      color: var(--teal);
-      border-bottom: 1px dashed var(--teal);
+      border-bottom: 1px dashed;
       cursor: help;
     }
+    .mediana-tip { color: var(--teal); border-bottom-color: var(--teal); }
+    .media-tip   { color: var(--gold); border-bottom-color: var(--gold); }
     #medianaTipBox {
       display: none;
       position: fixed;
@@ -683,31 +684,31 @@
           <span style="display:flex;align-items:baseline;gap:8px;font-size:.9rem;color:var(--muted);">
             <span style="color:var(--gold);font-size:.7rem;">●</span> Aluguel vigente
           </span>
-          <span style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink);">R$ 4.621,54 <span style="font-size:.8rem;font-weight:400;color:var(--muted);">→ R$ 48,14/m²</span></span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:700;color:var(--ink);">R$ 4.621,54 <span style="font-size:.8rem;font-weight:400;color:var(--muted);">→ R$ 48,14/m²</span></span>
         </li>
         <li style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
           <span style="display:flex;align-items:baseline;gap:8px;font-size:.9rem;color:var(--muted);">
             <span style="color:var(--gold);font-size:.7rem;">●</span> Condomínio
           </span>
-          <span style="font-family:'Playfair Display',serif;font-weight:700;color:var(--ink);">R$ 2.211,77</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:700;color:var(--ink);">R$ 2.211,77</span>
         </li>
         <li style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
           <span style="display:flex;align-items:baseline;gap:8px;font-size:.9rem;color:var(--muted);">
             <span style="color:var(--gold);font-size:.7rem;">●</span> Taxa de segurança
           </span>
-          <span style="font-family:'Playfair Display',serif;font-weight:700;color:var(--ink);">R$ 145,00</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:700;color:var(--ink);">R$ 145,00</span>
         </li>
         <li style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
           <span style="display:flex;align-items:baseline;gap:8px;font-size:.9rem;color:var(--muted);">
             <span style="color:var(--gold);font-size:.7rem;">●</span> IPTU mensal <span style="font-size:.8rem;">(10× ao ano)</span>
           </span>
-          <span style="font-family:'Playfair Display',serif;font-weight:700;color:var(--ink);">R$ 361,60</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:700;color:var(--ink);">R$ 361,60</span>
         </li>
         <li style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:10px;border-top:1px dashed var(--rule);">
           <span style="display:flex;align-items:baseline;gap:8px;font-size:.9rem;color:var(--muted);">
             <span style="color:var(--gold);font-size:.7rem;">●</span> Encargos fixos <span style="font-size:.8rem;">(cond. + seg. + IPTU)</span>
           </span>
-          <span style="font-family:'Playfair Display',serif;font-weight:700;color:var(--ink);">R$ 2.718,37</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:700;color:var(--ink);">R$ 2.718,37</span>
         </li>
       </ul>
       <div style="display:flex;justify-content:space-between;align-items:baseline;padding-top:12px;border-top:2px solid var(--rule);gap:12px;">
@@ -1033,7 +1034,7 @@
 
     <div class="callout green">
       <strong>Sinal auxiliar do próprio edifício + diferencial exclusivo</strong>
-      A página pública do Edifício São Bernardo no QuintoAndar exibe média das últimas negociações de <strong>R$ 6.140</strong>, com condomínio de R$ 1.980 e IPTU de R$ 211. Além disso, o apto 502 é a <strong>única unidade do condomínio com 2 vagas escrituradas</strong> — todos os demais possuem até 1 vaga. Esses dois fatores combinados tornam o pedido de R$ 6.000 não apenas defensável, mas tecnicamente fundamentado.
+      A página pública do Edifício São Bernardo no QuintoAndar exibe <span class="media-tip" id="mediaTrigger">média</span> das últimas negociações de <strong>R$ 6.140</strong>, com condomínio de R$ 1.980 e IPTU de R$ 211. Além disso, o apto 502 é a <strong>única unidade do condomínio com 2 vagas escrituradas</strong> — todos os demais possuem até 1 vaga. Esses dois fatores combinados tornam o pedido de R$ 6.000 não apenas defensável, mas tecnicamente fundamentado.
     </div>
 
     <h3>Scripts de negociação</h3>
@@ -1181,7 +1182,35 @@
   });
 </script>
 
-<div id="medianaTipBox">
+<div id="mediaTipBox" style="display:none;position:fixed;width:300px;background:var(--ink);color:#e8e0d4;border-radius:var(--r);padding:14px 16px;font-size:13px;line-height:1.6;font-weight:400;text-align:left;z-index:9999;box-shadow:0 8px 32px rgba(26,24,20,.30);pointer-events:none;">
+  <span style="display:block;font-weight:600;color:var(--gold);margin-bottom:7px;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;">Por que aqui é média e não mediana?</span>
+  No <strong style="color:#e8c97a">Ed. São Bernardo</strong>, todas as unidades são do mesmo prédio — padrão construtivo, localização e porte similares. Numa amostra homogênea e pequena como essa, a <strong style="color:#e8c97a">média e a mediana convergem</strong>: não há um imóvel discrepante que "puxe" o número para cima ou para baixo.<br><br>
+  Já na amostra de 11 comparáveis de bairros distintos, havia imóveis de R$ 4.146 a R$ 11.000 — aí a mediana protege contra distorção. Contextos diferentes, ferramentas diferentes.
+</div>
+
+<script>
+  (function() {
+    const trigger = document.getElementById('mediaTrigger');
+    const tip     = document.getElementById('mediaTipBox');
+    if (!trigger || !tip) return;
+
+    trigger.addEventListener('mouseenter', function() {
+      tip.style.display = 'block';
+      const r  = trigger.getBoundingClientRect();
+      const tw = tip.offsetWidth;
+      let left = r.left + r.width / 2 - tw / 2;
+      let top  = r.top - tip.offsetHeight - 12;
+      left = Math.max(8, Math.min(left, window.innerWidth - tw - 8));
+      if (top < 8) top = r.bottom + 12;
+      tip.style.left = left + 'px';
+      tip.style.top  = top  + 'px';
+    });
+
+    trigger.addEventListener('mouseleave', function() {
+      tip.style.display = 'none';
+    });
+  })();
+</script>
   <span class="tip-title">Por que usar a mediana e não a média?</span>
   A <strong style="color:#e8c97a">mediana</strong> é o valor do meio quando todos os imóveis são ordenados por preço — ela não é afetada por valores fora do padrão. O apartamento de R$ 11.000 na amostra, por exemplo, não "puxa" o resultado para cima.<br><br>
   A <strong style="color:#e8c97a">média</strong> somaria todos os valores e dividiria pelo total, sendo distorcida pelos extremos. Nesta amostra, ficaria inflada pelos anúncios de maior preço, dando uma referência irreal para a negociação.
