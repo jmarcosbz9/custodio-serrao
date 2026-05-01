@@ -516,7 +516,7 @@
     .sources li::before { content: '↗'; color: var(--teal); flex-shrink: 0; }
 
     /* ── MEDIANA TOOLTIP ───────────────────── */
-    .mediana-tip, .media-tip, .quartil-tip {
+    .mediana-tip, .media-tip, .quartil-tip, .quartil-tip2 {
       display: inline;
       font-weight: 700;
       font-size: 1.05em;
@@ -525,7 +525,7 @@
     }
     .mediana-tip  { color: var(--teal); border-bottom-color: var(--teal); }
     .media-tip    { color: var(--gold); border-bottom-color: var(--gold); }
-    .quartil-tip  { color: var(--ink2); border-bottom-color: var(--muted); }
+    .quartil-tip, .quartil-tip2  { color: var(--ink2); border-bottom-color: var(--muted); }
     #medianaTipBox {
       display: none;
       position: fixed;
@@ -607,7 +607,7 @@
       <div class="scard min">
         <div class="scard-label">Piso defensável</div>
         <div class="scard-val">R$ 6.050</div>
-        <div class="scard-sub">1º valor no intervalo Q1–Q2 da amostra de Comparáveis de Mercado (item 05). Custo total R$ 8.768 — imediatamente acima do <span class="quartil-tip" id="quartilTrigger">Q1</span> (R$ 8.735).</div>
+        <div class="scard-sub">1º valor no intervalo entre o <span class="quartil-tip" id="quartilTrigger">Quartil 1</span> e o <span class="quartil-tip2">Quartil 2</span> da amostra de Comparáveis de Mercado (item 05). Custo total R$ 8.768 — imediatamente acima do Q1 (R$ 8.735).</div>
       </div>
       <div class="scard ideal">
         <div class="scard-label">Faixa ideal de fechamento</div>
@@ -866,7 +866,7 @@
           <p style="font-size:.74rem;color:var(--muted);margin-top:4px;line-height:1.4">25% dos imóveis mais caros da amostra</p>
         </div>
       </div>
-      <p style="font-size:.78rem;color:var(--muted);margin-top:10px;border-top:1px dashed var(--rule);padding-top:8px;">Na calculadora acima, o imóvel objeto está posicionado no <strong style="color:var(--teal)">Q1–Q2</strong> da amostra de comparáveis — ou seja, entre os 25% a 50% mais acessíveis do mercado pesquisado.</p>
+      <p style="font-size:.78rem;color:var(--muted);margin-top:10px;border-top:1px dashed var(--rule);padding-top:8px;">Na calculadora acima, o imóvel objeto está posicionado no <strong style="color:var(--teal)">2º quartil</strong> da amostra de comparáveis — ou seja, na faixa entre os 25% e os 50% do mercado pesquisado, ordenado do mais barato ao mais caro.</p>
     </div>
   </section>
   <section id="comparaveis">
@@ -1258,10 +1258,10 @@
 
 <script>
   (function() {
-    const trigger = document.getElementById('quartilTrigger');
-    const tip     = document.getElementById('quartilTipBox');
-    if (!trigger || !tip) return;
-    trigger.addEventListener('mouseenter', function() {
+    const tip = document.getElementById('quartilTipBox');
+    if (!tip) return;
+
+    function showTip(trigger) {
       tip.style.display = 'block';
       const r  = trigger.getBoundingClientRect();
       const tw = tip.offsetWidth;
@@ -1271,9 +1271,11 @@
       if (top < 8) top = r.bottom + 12;
       tip.style.left = left + 'px';
       tip.style.top  = top  + 'px';
-    });
-    trigger.addEventListener('mouseleave', function() {
-      tip.style.display = 'none';
+    }
+
+    document.querySelectorAll('.quartil-tip, .quartil-tip2').forEach(function(el) {
+      el.addEventListener('mouseenter', function() { showTip(el); });
+      el.addEventListener('mouseleave', function() { tip.style.display = 'none'; });
     });
   })();
 </script>
