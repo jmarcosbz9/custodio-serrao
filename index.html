@@ -138,7 +138,12 @@
       margin: 0 auto;
       padding: 48px 28px 72px;
     }
-    section { margin-bottom: 56px; }
+    section { margin-bottom: 56px; scroll-margin-top: 58px; }
+    .section-top { display: block; text-align: right; font-size: .82rem; color: var(--muted); text-decoration: none; margin-top: 32px; padding-top: 14px; border-top: 1px solid var(--rule2); letter-spacing: .05em; font-family: 'Inter', sans-serif; }
+    .section-top:hover { color: var(--teal); }
+    .back-top { position: fixed; bottom: 28px; right: 28px; width: 42px; height: 42px; background: var(--ink); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; text-decoration: none; box-shadow: 0 4px 14px rgba(26,24,20,.25); opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s; z-index: 100; }
+    .back-top.visible { opacity: 1; pointer-events: auto; }
+    .back-top:hover { background: var(--teal); transform: translateY(-3px); }
     h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.65rem;
@@ -153,7 +158,7 @@
     }
     h2 .num {
       font-family: 'Inter', sans-serif;
-      font-size: .72rem;
+      font-size: .9rem;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--gold);
@@ -657,7 +662,8 @@
       </div>
       <p style="font-size:.78rem;color:var(--muted);margin-top:6px">* R$/m² mediano da amostra (R$ 70,00) × 96 m² — sem ajuste pelos encargos mais altos do imóvel. Âncora de abertura de R$ 6.400 posiciona o imóvel entre Q1 e Q2 da amostra.</p>
     </div>
-  </section>
+  <a href="#" class="section-top"><span style="font-family:'Inter',sans-serif">&#x2191;</span> Voltar para o início</a>
+</section>
 
   <!-- ════════════ CONTRATO VIGENTE ════════════ -->
   <section id="contrato">
@@ -740,7 +746,8 @@
         <span>Novo contrato (30 meses)</span>
       </div>
     </div>
-  </section>
+  <a href="#" class="section-top"><span style="font-family:'Inter',sans-serif">&#x2191;</span> Voltar para o início</a>
+</section>
 
   <!-- ════════════ ÍNDICES ════════════ -->
   <section id="indices">
@@ -808,7 +815,8 @@
         <span style="font-size:.78rem;padding:3px 9px;background:var(--teal);color:#fff;border-radius:99px;white-space:nowrap;">âncora de negociação</span>
       </li>
     </ul>
-  </section>
+  <a href="#" class="section-top"><span style="font-family:'Inter',sans-serif">&#x2191;</span> Voltar para o início</a>
+</section>
 
   <!-- ════════════ CALCULADORA ════════════ -->
   <section id="calculadora">
@@ -868,7 +876,8 @@
       </div>
 
     </div>
-  </section>
+  <a href="#" class="section-top"><span style="font-family:'Inter',sans-serif">&#x2191;</span> Voltar para o início</a>
+</section>
   <section id="comparaveis">
     <h2><span class="num">05 /</span> Comparáveis de Mercado</h2>
 
@@ -1020,7 +1029,8 @@
 
     <h3>Nota metodológica sobre os encargos</h3>
     <p>Os encargos fixos do imóvel (R$ 2.718,37) ficam <strong>acima da mediana da amostra</strong> (R$ 2.652). Isso justifica um desconto técnico de 10–15% sobre a mediana bruta de R$/m², levando o pedido para a faixa de R$ 6.050–R$ 6.400 em vez dos R$ 6.720 que a mediana pura indicaria. A lógica: o inquilino percebe o custo total, não apenas o aluguel.</p>
-  </section>
+  <a href="#" class="section-top"><span style="font-family:'Inter',sans-serif">&#x2191;</span> Voltar para o início</a>
+</section>
 
   <!-- ════════════ RECOMENDAÇÃO ════════════ -->
   <section id="recomendacao">
@@ -1057,7 +1067,8 @@
 
     <h3>Recomendação de indexador para o novo contrato</h3>
     <p>Substituir o IGP-M por <strong>IPCA</strong> como indexador de reajuste anual — ou incluir cláusula que permita substituição por índice oficial equivalente em caso de extinção ou distorção. O IPCA é o índice de referência do Banco Central e tem comportamento mais estável que o IGP-M para este tipo de ativo.</p>
-  </section>
+  <a href="#" class="section-top"><span style="font-family:'Inter',sans-serif">&#x2191;</span> Voltar para o início</a>
+</section>
 
   <!-- ════════════ JURÍDICO ════════════ -->
   <section id="juridico">
@@ -1091,7 +1102,8 @@
       <strong>Ponto de atenção prático</strong>
       Antes de assinar o novo contrato, solicite à administradora a <strong>discriminação das rubricas do condomínio</strong> (ordinárias vs. extraordinárias) para verificar se há encargos que, por lei, deveriam estar sendo cobertos pelo locador — o que impactaria o cálculo do custo total apresentado ao inquilino.
     </div>
-  </section>
+  <a href="#" class="section-top"><span style="font-family:'Inter',sans-serif">&#x2191;</span> Voltar para o início</a>
+</section>
 
   <!-- ════════════ FONTES ════════════ -->
   <section id="fontes">
@@ -1106,7 +1118,8 @@
       <li><a href="https://www2.senado.leg.br/bdsf/bitstream/handle/id/496313/000880424.pdf" target="_blank" rel="noopener">Senado Federal — Lei do Inquilinato consolidada</a></li>
       <li>Links individuais dos comparáveis disponíveis na tabela da seção 05.</li>
     </ul>
-  </section>
+  <a href="#" class="section-top"><span style="font-family:'Inter',sans-serif">&#x2191;</span> Voltar para o início</a>
+</section>
 
 </main>
 
@@ -1278,6 +1291,13 @@
       el.addEventListener('mouseleave', function() { tip.style.display = 'none'; });
     });
   })();
+</script>
+<a href="#" class="back-top" id="backTop" title="Voltar ao início">↑</a>
+
+<script>
+  var btn = document.getElementById('backTop');
+  window.addEventListener('scroll', function(){ btn.classList.toggle('visible', window.scrollY > 400); });
+  btn.addEventListener('click', function(e){ e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); });
 </script>
 </body>
 </html>
