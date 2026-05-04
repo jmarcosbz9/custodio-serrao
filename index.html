@@ -1156,6 +1156,9 @@
     if (total < Q1_CUSTO) {
       color = RED;
       comment = `⬇ Custo total de ${fmt(total)} <strong>abaixo do 1º quartil da amostra (${fmt(Q1_CUSTO)})</strong>. Valor conservador — preserva inquilino mas deixa o imóvel subprecificado.`;
+    } else if (aluguel === 6050) {
+      color = GREEN;
+      comment = `✔ Custo total de ${fmt(total)} — é o valor mais baixo do 2º quartil da amostra. <strong>Piso mínimo — sem subprecificação.</strong>`;
     } else if (total <= 9000) {
       color = GREEN;
       comment = `✔ Custo total de ${fmt(total)} <strong>no 2º quartil da amostra</strong>. Zona-alvo recomendada para fechamento.`;
